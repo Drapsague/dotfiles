@@ -1,7 +1,7 @@
 # oh my posh config for default terminal
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
-fi
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#   eval "$(oh-my-posh init zsh)"
+# fi
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -14,12 +14,12 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Shell integrations
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 autoload -Uz compinit && compinit
 
@@ -27,10 +27,10 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # Completion styling
 zstyle ':competion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ls="ls --color"
-alias ff="fzf"
+# alias ff="fzf"
 alias icat="kitten icat"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
@@ -39,5 +39,5 @@ alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 export PATH="$PATH:/Users/edualc/.local/bin"
 export DOCKER_HOST=unix:///Users/$USER/.orbstack/run/docker.sock
 
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v17)
+# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+# export JAVA_HOME=$(/usr/libexec/java_home -v17)
