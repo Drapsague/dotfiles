@@ -222,6 +222,17 @@ pcall(function()
   vim.cmd("colorscheme github_dark_high_contrast") -- or github_dark / github_dimmed / github_light
 end)
 
+-- Tmux Nav
+vim.g.tmux_navigator_no_mappings = 1
+
+local opts = { silent = true, noremap = true }
+
+-- Normal mode
+vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", opts)
+vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>", opts)
+vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", opts)
+vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", opts)
+vim.keymap.set("n", "<C-\\>", "<Cmd>TmuxNavigatePrevious<CR>", opts)
 
 -- ============ Minimal Harpoon-like system ============
 local harpoon = { files = {}, max = 9 }

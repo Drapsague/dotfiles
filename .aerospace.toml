@@ -62,11 +62,15 @@ on-focus-changed = ['move-mouse window-lazy-center']
 
 [mode.main.binding]
     alt-enter = '''exec-and-forget osascript -e '
-        tell application "iTerm.app"
+        tell application "terminal.app"
             do script
             activate
         end tell'
         '''
+
+    alt-f = 'layout tiles floating'
+    alt-c = 'layout accordion horizontal vertical'
+    alt-v = 'join-with left'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
     alt-h = 'focus left'
@@ -84,7 +88,6 @@ on-focus-changed = ['move-mouse window-lazy-center']
     # alt-minus = 'resize smart -50'
     # alt-equal = 'resize smart +50'
 
-    alt-f = 'fullscreen'
 
     # alt-upmonitor = 'focus-monitor up'
 
@@ -122,11 +125,10 @@ on-focus-changed = ['move-mouse window-lazy-center']
 
 
 # Custom Workspace Settings
-
-# Iterm2 config
-# [[on-window-detected]]
-# if.app-id = 'com.googlecode.iterm2'
-# run = 'move-node-to-workspace 3'
+[workspace-to-monitor-force-assignment]
+    1 = 'secondary'                           # Monitor sequence number from left to right. 1-based indexing
+    2 = 'secondary'                       # Main monitor
+    3 = 3                  # Non-main monitor in case when there are only two monitors
 
 # Kitty config
 [[on-window-detected]]
@@ -142,11 +144,6 @@ run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'move-node-to-workspace 6'
-
-# XQuartz config
-[[on-window-detected]]
-if.app-id = 'org.xquartz.X11'
-run = 'move-node-to-workspace 7'
 
 
 [mode.resize.binding]          
