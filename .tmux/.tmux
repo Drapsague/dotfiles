@@ -1,1 +1,1 @@
-/Users/edualc/dotfiles/.tmux
+/home/carlos/dotfiles/.tmux
